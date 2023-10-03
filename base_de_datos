@@ -1,0 +1,28 @@
+primero en phpmyadmin pones Nueva, "SQL" y el siguiente comando:
+CREATE DATABASE zapas;
+se va a crear la base de datos zapas, entras a esa base, de nuevo "SQL" e ingresas los sigientes comandos:
+
+CREATE TABLE users (
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(50),
+    contrasena VARCHAR(255)
+);
+
+CREATE TABLE admins (
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    clavekey VARCHAR(255)
+
+);
+
+
+*   la tabla "users" almacena los datos de los usuarios 
+    la tabla "admin" almacena la clave de administrador
+    la tabla "marcas" almacena las imagenes de las marcas
+    la tabla "modelos" almacena toda la informacion de la zapatilla a vender
+    la tabla "modelosImg" almacena las imagenes de las zapatillas
+    la tabla "carrito" almacena el carrito de compra de los usuarios, este se va a reiniciar cada vez que el usuario cierra sesion
+    la tabla "guardados" almacena las zapatillas que el usuario guardo en favoritos
+
+* para ingresar como administrador primero hay que generar una clave entrando en la pagina "generarCodigoAdmin.php", ahi se va a crear una clave que tenes que copiar y guardar en "clavedeadmin"

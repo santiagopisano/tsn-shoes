@@ -16,6 +16,14 @@ CREATE TABLE admins (
 
 );
 
+CREATE TABLE marcas (
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    rutaImagen VARCHAR(255)
+    
+);
+
 
 *   la tabla "users" almacena los datos de los usuarios 
     la tabla "admin" almacena la clave de administrador

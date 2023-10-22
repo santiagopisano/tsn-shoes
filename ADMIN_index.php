@@ -17,26 +17,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TSN</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+  <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid flex">
-    <a class="navbar-brand" href="#">Nombre</a>
+    <a class="navbar-brand" href="index.php">TSN SHOES</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a href="" class="nav-link active">Administrar Marcas</a>
+            <a href="index.php" class="nav-link active">Administrar Marcas</a>
         </li>
         <li class="nav-item ultimo">
-            <a href="" class="nav-link active">Administrar Modelos</a>
+            <a href="ADMIN_modelos.php" class="nav-link active">Administrar Modelos</a>
         </li>
       </ul>
     </div>
@@ -44,9 +45,57 @@
   </div>
 </nav>
 
+    <div class="contenedorAdmin00">
+      <div class="contenedor4">
+        <h1>Agregar marca</h1>
+          <form action="subirMarca.php" method="post" enctype="multipart/form-data">
+
+          <div class="margen10">
+            <label for="nombre" class="label">Nombre de la marca</label>
+            <br>  
+            <input type="text" name="nombre" class="input" id="nombre">
+            <br>
+          </div>
+          <div class="margen10">
+            <label for="imagen" id="labelFile" class="labelFile">Logo o imagen de la marca</label>
+            <br>  
+            <input type="file" onchange="funcion1(this)" class="inputFile" accept="image/*" name="imagen" id="imagen">
+            <br>
+            </div>
+            <button type="submit" class="boton">Subir</button>
+
+          </form>
+        </div>
+        <div class="contenedor4">
+        <h1>Marcas agregadas</h1>
+        <div class="contenedorAdmin02">
+            <?php
+
+              include "conectar.php";
+
+              $query = "SELECT nombre,rutaImagen FROM marcas";
+              $ejecutar = $conexion->query($query); 
+
+              if($ejecutar->num_rows>0){
+
+                while($datos = $ejecutar->fetch_assoc()){
+                  $ruta = $datos['rutaImagen'];
+                  $nombre = $datos['nombre']; 
+
+                  echo "<div class='card contenedorAdmin03'>
+                  <img src='$ruta' class='card-img-top' alt='imagenMarca'>
+                  <div class='card-body'>
+                    <h5 class='card-title'>$nombre</h5>
+                  </div>
+                </div>";
 
 
 
-
+                }
+              }      
+            ?>
+</div>       
+</div>
+    </div>
 </body>
 </html>

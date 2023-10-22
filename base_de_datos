@@ -16,12 +16,37 @@ CREATE TABLE admins (
 
 );
 
+CREATE TABLE marcas (
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    rutaImagen VARCHAR(255)
+    
+);
+
+CREATE TABLE modelos(
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(20),
+    precio INT(50),
+    marca VARCHAR(50),
+    rutaImagen VARCHAR(255)
+
+)
+
+CREATE TABLE talles(
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(255),
+    talle INT(2),
+    stock INT(255),
+
+)
 
 *   la tabla "users" almacena los datos de los usuarios 
     la tabla "admin" almacena la clave de administrador
     la tabla "marcas" almacena las imagenes de las marcas
     la tabla "modelos" almacena toda la informacion de la zapatilla a vender
-    la tabla "modelosImg" almacena las imagenes de las zapatillas
     la tabla "carrito" almacena el carrito de compra de los usuarios, este se va a reiniciar cada vez que el usuario cierra sesion
     la tabla "guardados" almacena las zapatillas que el usuario guardo en favoritos
 

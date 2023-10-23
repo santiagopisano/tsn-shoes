@@ -47,41 +47,57 @@
   </div>
 </nav>
 
-<div class="contenedor4">
-        <h1>Marcas agregadas</h1>
-        <div class="contenedorAdmin02">
-            <?php
-
-              include "conectar.php";
-
-              $query = "SELECT * FROM marcas";
-              $ejecutar = $conexion->query($query); 
-
-              if($ejecutar->num_rows>0){
-
-                while($datos = $ejecutar->fetch_assoc()){
-                  $ruta = $datos['rutaImagen'];
-                  $nombre = $datos['nombre']; 
-                  $id = $datos['id'];
-
-                  echo "<form action='' method=''><input type='hidden' value='$id'>
-                  <button class='none' type='submit'><div class='card contenedorAdmin03'>
-                  <img src='$ruta' class='card-img-top' alt='imagenMarca'>
-                  <div class='card-body'>
-                    <h5 class='card-title'>$nombre</h5>
-                  </div>
-                </div></button></form>";
 
 
 
-                }
-              }      
-            ?>
+<div class="contenedor5">
+
+  <div class="contenedor6">
+        <h4>Filtrar</h4>
+        <h6>Por marca</h6>
+        <?php
+
+            include "conectar.php";
+
+            $query0 = "SELECT id,nombre FROM marcas";
+            $ejecutar = $conexion->query($query0);
             
-            
-</div>       
+
+            while($datos = $ejecutar->fetch_assoc()){
+                $nombre = $datos['nombre'];
+                $id = $datos['id'];
+
+                echo "<form method='get' action='USER_modelos.php'>
+                        <input name='filtro' type='hidden' value='$id'>
+                        <button class='none' type='submit'><p class='parrafoFiltro'>$nombre</p></button>        
+                    </form>                
+                ";
+            }
+        ?>
+        <h6>Por precio</h6>
+        
+            <form action="USER_modelos.php" method="get">
+
+                <input type="number" name='filtro' class="none2" value="menos100">
+                <button type="submit" class="none">Menor a 100000</button>
+            </form>    
+            <form action="USER_modelos.php" method="get">
+
+                <input type="number" name='filtro' class="none2" value="mas100">
+                <button type="submit" class="none">Mayor a 100000</button>
+            </form>    
+
+
+  </div>
+  <div class="contenedor7">
+
+
+             
+
+
+
+  </div>
 </div>
-
 <footer>
     <div class="contenedorFooter">
         <p>

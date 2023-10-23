@@ -37,7 +37,7 @@
             <a href="index.php" class="nav-link active">Administrar Marcas</a>
         </li>
         <li class="nav-item ultimo">
-            <a href="" class="nav-link active">Administrar Modelos</a>
+            <a href="ADMIN_modelos.php" class="nav-link active">Administrar Modelos</a>
         </li>
       </ul>
     </div>

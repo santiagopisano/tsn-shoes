@@ -35,7 +35,7 @@
         <p>Ingresa o registrate para continuar.</p>
         <div class="contenedorBoton">
         <br>
-        <a href="ADMIN_registrarse.php" class="botonN">Soy administrador</a>
+        <a href="ADMIN_registrarse.php" class="botonOscuro">Soy administrador</a>
         </div>
     </div>
 

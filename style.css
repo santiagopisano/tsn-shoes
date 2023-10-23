@@ -25,7 +25,11 @@
     margin: 30px;
 
 }
+a{
 
+    text-decoration: none;
+
+}
 .contenedor2{
     display: flex;
     border: solid black;
@@ -103,13 +107,23 @@
 
     width: 200px;
     height: 200px;
+    transition: all 0.5s;
 
 }
+
+.contenedorAdmin03 img:hover{
+
+    width: 250px;
+    height: 250px;
+
+}
+
 .contenedorAdmin03{
     width: fit-content;
     text-align: center;
     margin: 5px;
 }
+
 .contenedorAdmin02{
 
     display: flex;
@@ -152,4 +166,39 @@
 
     text-decoration: underline;
 
+}
+.contenedorFooter{
+
+    background-color: black;
+    color: white;
+    padding: 40px;
+    width: 100%;
+    background-attachment: fixed;
+}
+.contenedorFooter p{
+
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.select{
+
+    background-color: black;
+    outline: none;
+    padding: 10px;
+    border-radius: 40px;
+    color: white;
+    border: 2px white solid;
+    appearance: none;
+}
+
+.none{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.none2{
+    display: none;
 }

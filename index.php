@@ -50,6 +50,45 @@
 </nav>
 
 
+    <main>
+    <div class="contenedor4">
+        <h1>Marcas agregadas</h1>
+        <div class="contenedorAdmin02">
+            <?php
+
+              include "conectar.php";
+
+              $query = "SELECT * FROM marcas";
+              $ejecutar = $conexion->query($query); 
+
+              if($ejecutar->num_rows>0){
+
+                while($datos = $ejecutar->fetch_assoc()){
+                  $ruta = $datos['rutaImagen'];
+                  $nombre = $datos['nombre']; 
+                  $id = $datos['id'];
+
+                  echo "
+                  <a href='USER_iniciarSesion.php'><div class='card contenedorAdmin03'>
+                  <img src='$ruta' class='card-img-top' alt='imagenMarca'>
+                  <div class='card-body'>
+                    <h5 class='card-title'>$nombre</h5>
+                  </div>
+                </div></a>";
+
+
+
+                }
+              }      
+            ?>
+            
+            
+</div>       
+</div>
+
+
+    </main>
+
 
 
 

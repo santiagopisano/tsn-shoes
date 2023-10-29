@@ -39,7 +39,16 @@ CREATE TABLE talles(
     id INT(255) AUTO_INCREMENT PRIMARY KEY,
     modelo VARCHAR(255),
     talle INT(2),
-    stock INT(255),
+    stock INT(255)
+
+)
+
+CREATE TABLE carrito(
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT(255),
+    idProducto INT(255),
+    talle INT(2)
 
 )
 

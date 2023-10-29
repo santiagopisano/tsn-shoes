@@ -1,3 +1,6 @@
+*{
+    transition: all 0.5s;
+}
 .nav-flex{
     display: flex;
     align-items: center;
@@ -25,7 +28,11 @@
     margin: 30px;
 
 }
+a{
 
+    text-decoration: none;
+
+}
 .contenedor2{
     display: flex;
     border: solid black;
@@ -103,13 +110,23 @@
 
     width: 200px;
     height: 200px;
+    transition: all 0.5s;
 
 }
+
+.contenedorAdmin03 img:hover{
+
+    width: 250px;
+    height: 250px;
+
+}
+
 .contenedorAdmin03{
     width: fit-content;
     text-align: center;
     margin: 5px;
 }
+
 .contenedorAdmin02{
 
     display: flex;
@@ -178,4 +195,182 @@
     color: white;
     border: 2px white solid;
     appearance: none;
+}
+
+.none{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: none;
+    margin: none;
+    padding: none;
+}
+.none2{
+    display: none;
+}
+
+.contenedor5{
+
+    width: 98%;
+    margin: 1%;
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+.contenedor6{
+    
+    width:15%;
+    font-size: small;
+
+}
+.contenedor7{
+
+    width: 85%;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 7px solid black;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: black;
+    text-align: center;
+
+}
+
+.contenedor8{
+    display: flex;
+}
+
+.carta{
+
+    border-radius: 0px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px;
+    border: 5px solid white;
+    height: 550px;
+    width: 30%;
+    transition: all 0.5s;
+    margin: 10px;
+}
+.carta-body{
+
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    height: 40%;
+}
+.carta-img{
+
+    border-top-right-radius: 0px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 3px solid black;
+    width: 100%;
+    height: 60% ;
+
+}
+.boton01{
+
+    width: 100%;
+
+}
+
+.carrito01{
+
+    margin-top: 10px;
+
+
+}
+.blanco{
+
+    color: white;
+}
+
+.carta:hover{
+
+    width: 32%;
+    height: 600px;
+}
+
+
+.contenedor9{
+    display: flex;
+    padding: 50px;
+    margin:20px;
+    border:5px solid black;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+
+.imagenCont9{
+    width: 50%;
+    border: 2px solid black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    height: 98%;
+}
+.contenedor10{
+
+    margin-left: 20px;
+    width: 50%;
+    border: 2px solid black;
+    height: 98%;
+    padding:50px;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+.contenedor10 h2{
+
+    text-align: center;
+
+}
+.contenedor10 h4{
+
+    text-align: center;
+
+}
+
+
+.boton2{
+
+    width: 100%;
+
+
+}
+.contenedor12{
+
+    text-align: right;
+    width: 100%;
+
+}
+.contenedor11{
+
+    padding: 20px;
+    border: 2px solid white;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+.radio{
+
+    border: 2px solid white;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+}
+.contenedor10 h5{
+
+    margin-top: 20px;
+    text-align: right;
+}
+.tabla03 img{
+    width: 20px;
 }

@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a href="#marcas" class="nav-link active">Ver marcas</a>
+            <a href="index.php" class="nav-link active">Ver marcas</a>
         </li>
         <li class="nav-item ultimo">
             <a href="USER_modelos.php" class="nav-link active">Ver modelos</a>
@@ -47,38 +47,80 @@
   </div>
 </nav>
 
-<div class="contenedor4">
-        <h1>Marcas agregadas</h1>
-        <div class="contenedorAdmin02">
+    <main>
+        
+        <div class="contenedor9">
             <?php
 
-              include "conectar.php";
+                include "conectar.php";
+                $id = $_POST['id'];
+                
+                $query = "SELECT * FROM modelos WHERE id = '$id'";
+                $ejecutar = $conexion->query($query);
 
-              $query = "SELECT * FROM marcas";
-              $ejecutar = $conexion->query($query); 
+                $datos = $ejecutar->fetch_assoc();
 
-              if($ejecutar->num_rows>0){
-
-                while($datos = $ejecutar->fetch_assoc()){
-                  $ruta = $datos['rutaImagen'];
-                  $nombre = $datos['nombre']; 
-
-                  echo "<form action='USER_modelos.php' method='post'><input type='hidden' name='filtro2' value='$nombre'>
-                  <button class='none' type='submit'><div class='card contenedorAdmin03'>
-                  <img src='$ruta' class='card-img-top' alt='imagenMarca'>
-                  <div class='card-body'>
-                    <h5 class='card-title'>$nombre</h5>
-                  </div>
-                </div></button></form>";
+                $nombre = $datos['nombre'];
+                $precio = $datos['precio'];
+                $marca = $datos['marca'];
+                $rutaImagen = $datos['rutaImagen'];
 
 
 
-                }
-              }      
-            ?>
+
+            echo"
             
-</div>       
-</div>
+            <img src='$rutaImagen' class='imagenCont9' alt='Imagen del modelo'>
+
+            <div class='contenedor10'>
+
+                <h2>$nombre</h2>
+                <h4>$$precio</h4>
+
+            <form action='agregarAlCarrito.php' method='post'>
+            
+                <h5>Talles<h5>
+                <div class='contenedor11'>
+            ";
+
+
+
+            $query2 = "SELECT * FROM talles WHERE modelo = '$nombre' AND stock > 0";
+            $ejecutar2 = $conexion->query($query2);
+            $i = 0;
+
+            
+
+            while($datos2 = $ejecutar2->fetch_assoc()){
+
+                $talles[$i] = $datos2['talle'];
+
+                    echo "
+                    <div class='radio'>
+                    <label for='$i'>$talles[$i]</label>
+                    <input type='radio' name='talle' value='$talles[$i]' id='$i' required>
+                    </div>";
+
+                $i++;
+            }
+
+            echo "
+            </div>
+            <br>
+                <input type='hidden' value = '$id' name='id'>
+                <button class='boton boton2' type='submit'>Agregar al carrito</button>
+            
+                </form>  
+            </div>
+            ";
+
+
+
+
+            
+            ?>
+        </div>
+    </main>
 
 <footer>
     <div class="contenedorFooter">

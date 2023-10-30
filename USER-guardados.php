@@ -57,7 +57,7 @@
                 $idUsuario = $_SESSION['user'];
 
 
-                $query = "SELECT idProducto, talle FROM carrito WHERE idUsuario='$idUsuario'";
+                $query = "SELECT idProducto FROM guardados WHERE idUsuario='$idUsuario'";
                 $ejecutar = $conexion->query($query);
             
                 
@@ -69,7 +69,6 @@
                     while($datos = $ejecutar->fetch_assoc()){
 
                         $idProducto = $datos['idProducto'];
-                        $talle = $datos['talle'];
                         
                         $query2 = "SELECT * FROM modelos WHERE id = '$idProducto'";
                         $ejecutar2 = $conexion->query($query2);
@@ -88,19 +87,21 @@
                             <div class='contenedor14'>
                             
 
-                                <div class='tabla04'><img src='$ruta'></div>
-    
+                                 <form action='USER-zapatilla.php' method='post'>
+                                
+                                     <input type='hidden' name='id' value='$id2''>
+                                     <button type='submit' class='none'><div class='tabla04'><img src='$ruta'></div></button>
+                                
+                                 </form>
                                 <div class='tabla00'>$nombre</div>
                                 
                                 <div class='tabla01'>$marca</div>
                                 
-                                <div class='tabla02'>Talle:$talle</div>
 
                                 <div class='tabla03'>$precio</div>
                                                         
 
-                                <form action='eliminarProductoCarrito.php' method='post'>
-                                <input type='hidden' name='talle' value='$talle'>
+                                <form action='eliminarProductoGuardados.php' method='post'>
                                 <input type='hidden' name='id' value=$id2>
                                 <button type='submit' class='none'>
                                 <div class='tabla05'><svg class='carrito carritoFondo' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x' viewBox='0 0 16 16'>
@@ -113,65 +114,15 @@
                         
                         
                         ";
-
-                        $total[$i] = $precio;
                             
                         $i++;
 
                         }}
 
-                        $totalFinal = 0;
-
-                    foreach($total as $total2){
-
-                        $totalFinal = $totalFinal + $total2;
-
-                    }
-
-
-                    echo "
-                        <div class='contenedor15'>
-                        
-                        <form action='comprar.php' method='post'>";
-
-
-                        $query3 = "SELECT idProducto,talle FROM carrito WHERE idUsuario='$idUsuario'";
-                        $ejecutar3 = $conexion->query($query);
-                        $i2 = 0;
-
-                        while($datos3=$ejecutar3->fetch_assoc()){
-
-
-                            $i2++;
-                            $id3 = $datos3['idProducto'];
-                            $talle2 = $datos3['talle'];
-
-                            echo "<input type='hidden' name='$i2' value='$id3'>                            
-                                  <input type='hidden' name='talle$i2' value='$talle2'>
-
-                            ";
-
-
-
-                        }       
-
-
-                      echo "
-                        
-                            <input type='hidden' name='i' value='$i2'>
-                            <button type='submit' class='botonOscuro'>Realizar compra</button></form>
-                            <div class='contenedor16'>Precio total: $$totalFinal</div>
-
-                        </div>
-
-                    
-                    ";
-                    
-
                 }else{
 
 
-                    echo "No hay productos en el carrito";
+                    echo "No hay productos guardados";
                     
                 }
             

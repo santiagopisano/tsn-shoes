@@ -176,7 +176,6 @@ a{
     color: white;
     padding: 40px;
     width: 100%;
-    background-attachment: fixed;
 }
 .contenedorFooter p{
 
@@ -239,6 +238,9 @@ a{
 
 .contenedor8{
     display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .carta{
@@ -248,7 +250,7 @@ a{
     border-bottom-right-radius: 25px;
     padding: 10px;
     border: 5px solid white;
-    height: 550px;
+    height: 500px;
     width: 30%;
     transition: all 0.5s;
     margin: 10px;
@@ -261,6 +263,7 @@ a{
     margin-top: 10px;
     text-align: center;
     height: 40%;
+    width: 100%;
 }
 .carta-img{
 
@@ -337,8 +340,6 @@ a{
     text-align: center;
 
 }
-
-
 .boton2{
 
     width: 100%;
@@ -371,6 +372,84 @@ a{
     margin-top: 20px;
     text-align: right;
 }
-.tabla03 img{
-    width: 20px;
+
+
+
+.tabla04 img{
+
+    width: 100px;
+    border: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+
+}
+
+.contenedor13{
+
+    padding: 30px;
+
+}
+
+.contenedor14{
+
+    margin: 20px;
+    display: flex;
+    padding: 50px;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: right;
+    border: 5px solid black;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
+.tabla00{
+
+    margin-left: 13%;
+
+}
+.tabla01{
+
+    margin-left: 13%;
+
+}
+.tabla02{
+
+    margin-left: 13%;
+
+}
+.tabla03{
+
+    margin-left: 13%;
+
+}
+
+.tabla05{
+
+    margin-left: 20%;
+
+}
+.carritoFondo{
+
+    background-color: white;
+
+}
+.contenedor15{
+
+    display: flex;
+    align-items: center;
+
+}
+.contenedor16{
+
+    margin-left: 70%;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
 }

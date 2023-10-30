@@ -52,11 +52,30 @@ CREATE TABLE carrito(
 
 )
 
+CREATE TABLE compras(
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT(255),
+    idProducto INT(255),
+    talle INT(255),
+    fecha DATE,
+    precio INT(50)
+
+)
+
+CREATE TABLE guardados(
+
+    id INT(255) AUTO_INCREMENT PRIMARY KEY,
+    idUsuario INT(255),
+    idProducto INT(255)
+)
+
 *   la tabla "users" almacena los datos de los usuarios 
     la tabla "admin" almacena la clave de administrador
     la tabla "marcas" almacena las imagenes de las marcas
     la tabla "modelos" almacena toda la informacion de la zapatilla a vender
     la tabla "carrito" almacena el carrito de compra de los usuarios, este se va a reiniciar cada vez que el usuario cierra sesion
     la tabla "guardados" almacena las zapatillas que el usuario guardo en favoritos
+    la tabla "compras" almacena todas las compras realizadas
 
 * para ingresar como administrador primero hay que generar una clave entrando en la pagina "generarCodigoAdmin.php", ahi se va a crear una clave que tenes que copiar y guardar en "clavedeadmin"

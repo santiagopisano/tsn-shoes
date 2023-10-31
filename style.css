@@ -358,6 +358,7 @@ a{
     border: 2px solid white;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    display: flex;
 
 }
 .radio{
@@ -366,6 +367,7 @@ a{
     width: fit-content;
     padding: 20px;
     border-radius: 20px;
+    
 }
 .contenedor10 h5{
 

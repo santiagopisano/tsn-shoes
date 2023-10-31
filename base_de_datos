@@ -32,7 +32,7 @@ CREATE TABLE modelos(
     marca VARCHAR(50),
     rutaImagen VARCHAR(255)
 
-)
+);
 
 CREATE TABLE talles(
 
@@ -41,7 +41,7 @@ CREATE TABLE talles(
     talle INT(2),
     stock INT(255)
 
-)
+);
 
 CREATE TABLE carrito(
 
@@ -50,7 +50,7 @@ CREATE TABLE carrito(
     idProducto INT(255),
     talle INT(2)
 
-)
+);
 
 CREATE TABLE compras(
 
@@ -61,14 +61,14 @@ CREATE TABLE compras(
     fecha DATE,
     precio INT(50)
 
-)
+);
 
 CREATE TABLE guardados(
 
     id INT(255) AUTO_INCREMENT PRIMARY KEY,
     idUsuario INT(255),
     idProducto INT(255)
-)
+);
 
 *   la tabla "users" almacena los datos de los usuarios 
     la tabla "admin" almacena la clave de administrador
